@@ -21,3 +21,31 @@ int main(){
 
 }
     */
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+string process(string s) {
+    string result = "";
+    for (char c : s) {
+        if (c == '#') {
+            if (!result.empty()) result.pop_back();
+        } else {
+            result.push_back(c);
+        }
+    }
+    return result;
+}
+
+int main() {
+    string a, b;
+    cin >> a >> b;
+
+    if (process(a) == process(b))
+        cout << "Yes";
+    else
+        cout << "No";
+
+    return 0;
+}
